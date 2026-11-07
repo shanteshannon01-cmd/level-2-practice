@@ -16,7 +16,13 @@ console.log("Step 1:", exampleTruck.describe());   // Welcome to Taco Rocket!
 
 // TODO: Make an object for YOUR truck with a name and a describe() method that uses this.name.
 // TODO: Log the result of calling describe().
-
+const myTruck = {
+  name: "Intrusive Flavors",
+  describe: function () {
+    return "Welcome to " + this.name + "!";
+  }
+};
+console.log("Step 1:", myTruck.describe());
 
 // ---------- Step 2: Compare with an arrow function ----------
 // Example:
