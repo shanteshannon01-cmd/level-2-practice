@@ -59,19 +59,14 @@ const menu = [
 // EXAMPLE: log every item's NAME.
 // i is a counter: 0, then 1, then 2... menu[i] is the item at that spot.
 for (let i = 0; i < menu.length; i++) {
-  console.log(menu[i].name);
+  console.log(menu.name[i]);
 }
 
-<<<<<<< HEAD
-// TODO: Write a for loop that logs every item's PRICE.
-for (let i =0; i < menu.length; i++) {
-  console.log("for loop:", menu[i].price);
-}
-=======
 // YOUR TURN: log every item's PRICE.
 // Change one thing: .name → .price
-
->>>>>>> 2a4cd5768c93e89341334b8f28c350bfa965acda
+for (let i= 0; i < menu.length; i++){
+    console.log(menu.price[i]);
+}
 
 // ---------- Step 2: A sentence for each item ----------
 // EXAMPLE: logs "Taco is on the menu", "Burrito is on the menu"...
@@ -79,32 +74,18 @@ for (let i = 0; i < menu.length; i++) {
   console.log(menu[i].name + " is on the menu");
 }
 
-<<<<<<< HEAD
-// TODO: Use forEach to log a sentence for each item, like "Taco costs $4.5".
-menu.forEach(function (item) {
-    console.log("forEach:", item.name[i] + " costs $" + menu.price[i] );
-=======
 // YOUR TURN: log "Taco costs $4.5", "Burrito costs $9"...
 // Change one thing: " is on the menu" → " costs $" + menu[i].price
->>>>>>> 2a4cd5768c93e89341334b8f28c350bfa965acda
 
-});
+
 
 // ---------- Step 3: Put the menu on the page ----------
-<<<<<<< HEAD
-// Example: one item, made safely with createElement + textContent.
- list = document.getElementById("menu-list");
-const exampleLi = document.createElement("li");
-exampleLi.textContent = "Example: " + menu[0].name;
-list.appendChild(exampleLi);
-=======
 // EXAMPLE: puts every NAME on the page, one per line. (Same as Menu Card.)
 const menuText = document.querySelector("#menu-text");
 menuText.textContent = "";
 for (let i = 0; i < menu.length; i++) {
   menuText.textContent = menuText.textContent + menu[i].name + "\n";
 }
->>>>>>> 2a4cd5768c93e89341334b8f28c350bfa965acda
 
 // YOUR TURN: don't copy this one. Change the example above,
 // so each line shows the name AND the price, like "Taco: $4.5".
