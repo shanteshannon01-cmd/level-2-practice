@@ -14,12 +14,15 @@ async function loadRecipe() {
   recipeArea.textContent = "";   // clear the old recipe first
 
   // ---------- Step 2 goes here (loading message) ----------
-
+statusText.textContent = "Loading...";
 
   const response = await fetch(url);
-
+statusText.textContent = "";
   // ---------- Step 3 goes here (no recipe with that number) ----------
-
+if (!response.ok) {
+    statusText.textContent = "No recipe with that number. Try 1 to 50.";
+    return;
+  }
 
   const recipe = await response.json();
   console.log(recipe);   // look at ALL the fields in the console, then pick a few
@@ -40,6 +43,13 @@ async function loadRecipe() {
   //   a <p> with the cuisine:           "Cuisine: Italian"
   //   a <p> with the prep time:         "Ready in 20 minutes"   (recipe.prepTimeMinutes)
   // Each one: createElement, textContent, card.appendChild.
+const cuisine = document.createElement("p");
+cuisine.textContent = "Cuisine: " + recipe.cuisine;
+card.appendChild(cuisine);
+
+const prepTime = document.createElement("p");
+prepTime.textContent = "Ready in " + recipe.prepTimeMinutes + " minutes";
+card.appendChild(prepTime);
 }
 
 button.addEventListener("click", loadRecipe);
